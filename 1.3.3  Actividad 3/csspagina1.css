@@ -1,0 +1,21 @@
+body {
+  background-color: #fff3cd;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.menu {
+  background-color: #333;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.menu a.activo {
+  color: orange;
+  font-weight: bold;
+}

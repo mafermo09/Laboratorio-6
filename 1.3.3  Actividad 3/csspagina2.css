@@ -1,0 +1,21 @@
+body {
+  background-color: #e0f7fa;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.menu {
+  background-color: #004080;
+  padding: 15px;
+  text-align: center;
+}
+
+.menu a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.menu a.activo {
+  color: cyan;
+  font-weight: bold;
+}
