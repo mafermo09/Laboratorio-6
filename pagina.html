@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página sencilla</title>
+  <style>
+    /* Estilos simples y limpios */
+    :root {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      --accent: #2b7cff;
+      --muted: #666;
+      --card-bg: #f8f9ff;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #222;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(90deg,var(--accent), #4aa3ff);
+      color: white;
+      padding: 18px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    header h1 { margin: 0; font-size: 1.25rem; }
+    nav { margin-top: 8px; }
+    nav a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      margin-right: 12px;
+      font-size: 0.95rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 1px 3px rgba(11,22,40,0.04);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 18px 12px;
+      font-size: 0.9rem;
+    }
+
+    /* Botón sencillo */
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 520px) {
+      header h1 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi página sencilla</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="card" style="margin-bottom:18px;">
+      <h2>Bienvenido/a</h2>
+      <p>Esta es una página de ejemplo, ideal para comenzar con HTML y CSS. Puedes modificar el texto, los estilos y agregar imágenes o enlaces.</p>
+      <p><strong>¿Quieres probar algo rápido?</strong> Haz clic en el botón para ver una alerta sencilla.</p>
+      <button class="btn" onclick="mensaje()">Hazme clic</button>
+    </section>
+
+    <section id="sobre" class="card" style="margin-bottom:18px;">
+      <h3>Sobre este ejemplo</h3>
+      <ul>
+        <li>Estructura semántica: &lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;.</li>
+        <li>Estilos incluidos en &lt;style&gt; para que no necesites archivos extra.</li>
+        <li>Un pequeño script en JavaScript para interacción.</li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="card">
+      <h3>Contacto</h3>
+      <p>Deja tu nombre y un mensaje (esto no envía datos a ningún servidor, es solo para mostrar cómo sería el formulario).</p>
+      <form onsubmit="event.preventDefault(); enviarFormulario();">
+        <div style="margin-bottom:8px;">
+          <input type="text" id="nombre" placeholder="Tu nombre" style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd" />
+        </div>
+        <div style="margin-bottom:8px;">
+          <textarea id="mensaje" placeholder="Tu mensaje" rows="4" style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd"></textarea>
+        </div>
+        <button class="btn" type="submit">Enviar (simulado)</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> — Página de ejemplo. Hecha con ♥.
+  </footer>
+
+  <script>
+    // Rellenar año automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function mensaje() {
+      alert('¡Hola! Este es un mensaje de ejemplo.');
+    }
+
+    function enviarFormulario() {
+      const nombre = document.getElementById('nombre').value.trim() || 'Anonimo';
+      const texto = document.getElementById('mensaje').value.trim() || '(sin mensaje)';
+      alert('Formulario simulado\\nNombre: ' + nombre + '\\nMensaje: ' + texto);
+      // limpiar campos (opcional)
+      document.getElementById('nombre').value = '';
+      document.getElementById('mensaje').value = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.menu {
+  background-color: #222;
+  padding: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.menu a.activo {
+  color: yellow;
+  font-weight: bold;
+}
+
+.contenido {
+  padding: 40px;
+}
